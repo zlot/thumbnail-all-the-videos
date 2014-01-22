@@ -43,11 +43,15 @@ class Stillmaker
       video.screenshot(shot_name, seek_time: seek_time)
     end
   end
+
+  def take_interval
+    `ffmpeg -i #{@video_str} -f image2 -vf fps=fps=#{@interval} #{@video_name}/%04d.png`
+  end
 end
 
 Stillmaker.print_intro
 s = Stillmaker.new
 s.load_video
 s.get_interval
-s.take_screenshots
-
+# s.take_screenshots
+s.take_interval
