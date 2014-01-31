@@ -45,7 +45,7 @@ class Stillmaker
   end
 
   def take_interval
-    `ffmpeg -i #{@video_str} -f image2 -vf fps=fps=#{@interval} #{@video_name}/%04d.png`
+    `ffmpeg -i #{@video_str} -f image2 -vf fps=fps=#{@interval} #{@video_name}/%05d.png`
   end
 end
 
