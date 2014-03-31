@@ -1,14 +1,24 @@
-#Stillmaker
+#Thumbnail ALL the videos!
+
+Forked from (Stillmaker, by jlarusso)[https://github.com/jlarusso/Stillmaker]
+
 Uses [ffmpeg](http://www.ffmpeg.org/) and [streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg) to take a bunch of screenshots of a video file.
 
-###Setup
-`brew install ffmpeg`  
-`bundle install`
+### Intention
+A GUI that allows the selection of a folder, in which this program will recursively check the directory and all its subdirectories for files with common movie-file extensions.
 
-###How to use
-1. Put a video file in the project root directory.
-2. `ruby stillmaker.rb`
-3. Follow the directions at the command prompt.
+For each that it finds, a thumbnail will be generated with the name `#{videoname-thumb.jpg}`. 
 
-###Why?
-I find that film stills are a great reference for improving drawing skills. I wrote this so that I could easily build a library of stills from a video file.
+This is to make life a bit easier at [The Monkey's Cobbler](http://www.themonkeyscobbler.com.au)
+
+
+### Setup
+None at the moment. Still in development. Using Bundle, a Gemfile, and an included ffmpeg binary.
+
+### How to use
+1. `ruby thumbnail-all-the-videos.rb`
+2. ???
+3. profit
+
+### Thanks
+To jlarusso for getting the ball rolling with his [Stillmaker](https://github.com/jlarusso/Stillmaker) project :)
