@@ -7,7 +7,7 @@ Uses [ffmpeg](http://www.ffmpeg.org/) and [streamio-ffmpeg](https://github.com/s
 ### Intention
 A GUI that allows the selection of a folder, in which this program will recursively check the directory and all its subdirectories for files with common movie-file extensions.
 
-For each that it finds, a thumbnail will be generated with the name `#{videoname-thumb.jpg}`. 
+For each that it finds, a single thumbnail will be generated with the name `#{videoname-thumb.jpg}`. 
 
 This is to make life a bit easier at [The Monkey's Cobbler](http://www.themonkeyscobbler.com.au)
 
