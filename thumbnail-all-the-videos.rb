@@ -6,6 +6,10 @@ require 'streamio-ffmpeg'
 # then $ git add Gemfile Gemfile.lock
 # The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now. 
 
+# Utility function to colour a puts string.
+def color(str)
+  "\033[34m#{str}\033[0m"
+end
 
 # set location of ffmpeg binary
 FFMPEG.ffmpeg_binary = "./vendor/ffmpeg"
@@ -16,7 +20,7 @@ $FOUND_FILES = false;
 Dir.glob('**/*.{mkv,mov,mp4,wmv}') do | video_rel_path |
 
 	#video_rel_path is simply a string name of relative path
-	puts "processing #{video_rel_path}"
+	print color("Processing: #{video_rel_path}"), "\r\n"
 	movie = FFMPEG::Movie.new("#{video_rel_path}")
 
 	seek_time = 3;
@@ -31,11 +35,14 @@ Dir.glob('**/*.{mkv,mov,mp4,wmv}') do | video_rel_path |
 	end
 
 
-	
+	begin
+		movie.screenshot("#{video_rel_path}_thumb.jpg", {seek_time:seek_time, resolution: "640x480"}, preserve_aspect_ratio: :width)
+	rescue FFMPEG::Error
+		puts "did I get rescued?"
 
-	movie.screenshot("#{video_rel_path}_thumb.jpg", {seek_time:seek_time, resolution: "640x480"}, preserve_aspect_ratio: :width)
-	
-	puts "output #{video_rel_path}.jpg"
+	end
+
+	print color("Successfully output #{video_rel_path}.jpg"), "\r\n"
 
 	# TODO:::
 	# Think about Automatically killing hung processes:
@@ -51,3 +58,6 @@ end
 if(!$FOUND_FILES) 
 	puts "Didn't find any movie files! Are you sure you're looking in the right directory?" 
 end
+
+
+
