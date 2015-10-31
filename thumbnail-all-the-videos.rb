@@ -1,6 +1,12 @@
 require 'rubygems'
 require 'streamio-ffmpeg'
 
+##########################################################
+
+# Pass a relative or absolute path to videos you wish to thumbnail as first argument.
+# If not passed, will use directly of this script.
+
+##########################################################
 
 # Utility function to colour a puts string.
 def color(str)
@@ -10,6 +16,10 @@ end
 # set location of ffmpeg binary, or binary on PATH
 FFMPEG.ffmpeg_binary = "ffmpeg"
 
+# If argument is passed, use to change to passed directory
+if ARGV[0]
+  Dir.chdir(ARGV[0])
+end
 
 $FOUND_FILES = false; # flag for whether any movie files exist in chosen folder
 
