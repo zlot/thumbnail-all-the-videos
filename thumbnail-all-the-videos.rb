@@ -11,8 +11,9 @@ def color(str)
   "\033[34m#{str}\033[0m"
 end
 
-# set location of ffmpeg binary
-FFMPEG.ffmpeg_binary = "./vendor/ffmpeg"
+# set location of ffmpeg binary, or binary on PATH
+FFMPEG.ffmpeg_binary = "ffmpeg"
+
 
 # flag for whether any movie files exist in chosen folder
 $FOUND_FILES = false;
