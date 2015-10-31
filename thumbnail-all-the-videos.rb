@@ -18,7 +18,7 @@ FFMPEG.ffmpeg_binary = "ffmpeg"
 # flag for whether any movie files exist in chosen folder
 $FOUND_FILES = false;
 
-Dir.glob('**/*.{mkv,mov,mp4,wmv}') do | video_rel_path |
+Dir.glob('**/*.{mkv,mov,mp4,wmv,avi}') do | video_rel_path |
 
 	#video_rel_path is simply a string name of relative path
 	print color("Processing: #{video_rel_path}"), "\r\n"
