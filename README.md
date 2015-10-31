@@ -11,14 +11,20 @@ For each that it finds, a single thumbnail will be generated with the name `#{vi
 
 This is to make life a bit easier at [The Monkey's Cobbler](http://www.themonkeyscobbler.com.au)
 
+### Dependencies
+Requires [ffmpeg](http://www.ffmpeg.org/) binary. Easiest way to get hold of this is to use homebrew:
 
-### Setup
-None at the moment. Still in development. Using Bundle, a Gemfile, and an included ffmpeg binary.
+    brew install ffmpeg
+
+This will place `ffmpeg` binary on your PATH, which is useful for this script and in the future!
 
 ### How to use
-1. `ruby thumbnail-all-the-videos.rb`
-2. ???
-3. profit
+
+    ruby thumbnail-all-the-videos.rb <path_to_videos>
+
+Pass a relative or absolute path to videos you wish to thumbnail as first argument.
+
+If an argument is not passed, the script will use the current directory.
 
 ### Thanks
 To jlarusso for getting the ball rolling with his [Stillmaker](https://github.com/jlarusso/Stillmaker) project 😀
