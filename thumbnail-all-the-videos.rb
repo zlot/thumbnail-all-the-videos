@@ -1,10 +1,6 @@
 require 'rubygems'
 require 'streamio-ffmpeg'
 
-# run bundle init: this will create your Gemfile with source pointing to https://rubygems.org
-# run bundle install
-# then $ git add Gemfile Gemfile.lock
-# The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now. 
 
 # Utility function to colour a puts string.
 def color(str)
@@ -15,8 +11,7 @@ end
 FFMPEG.ffmpeg_binary = "ffmpeg"
 
 
-# flag for whether any movie files exist in chosen folder
-$FOUND_FILES = false;
+$FOUND_FILES = false; # flag for whether any movie files exist in chosen folder
 
 Dir.glob('**/*.{mkv,mov,mp4,wmv,avi}') do | video_rel_path |
 
