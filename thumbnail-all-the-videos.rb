@@ -56,9 +56,8 @@ Dir.glob('**/*.{mkv,mov,mp4,wmv,avi}') do | video_rel_path |
 	$FOUND_FILES = true
 end
 
-if(!$FOUND_FILES) 
-	puts "Didn't find any movie files! Are you sure you're looking in the right directory?" 
+if(!$FOUND_FILES)
+	puts "Didn't find any movie files! Are you sure you're looking in the right directory? \n Looking in folder: #{Dir.pwd}"
 end
-
 
 
