@@ -1,6 +1,6 @@
 # Thumbnail ALL the videos!
 
-Forked from [Stillmaker, by jlarusso](https://github.com/jlarusso/Stillmaker)
+Script based off some code from [Stillmaker, by jlarusso](https://github.com/jlarusso/Stillmaker)
 
 Uses [ffmpeg](http://www.ffmpeg.org/) and [streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg) to take a screenshot of a directory of video files.
 
